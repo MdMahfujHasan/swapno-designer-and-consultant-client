@@ -10,7 +10,7 @@ const ContactInfo = () => {
     const handleClose = () => {
         setIsVisible(false);
     };
-    const socialLinks = "text-lg";
+    const socialLinks = "text-lg hover:text-sky-200";
     return (
         <>
             {isVisible && (

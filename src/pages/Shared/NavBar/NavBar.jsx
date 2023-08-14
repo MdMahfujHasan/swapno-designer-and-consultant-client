@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import ActiveLink from '../../../components/ActiveLink';
 
-const navItem = "mr-5 font-semibold uppercase hover:underline";
+const navItem = "mr-5 font-semibold uppercase";
 const NavItemWithDropdown = ({ label, links }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleDropdown = () => {
@@ -13,7 +14,7 @@ const NavItemWithDropdown = ({ label, links }) => {
     return (
         <span className="dropdown dropdown-bottom uppercase">
             <label
-                className='flex items-center hover:cursor-pointer font-semibold hover:underline mr-3'
+                className='flex items-center hover:cursor-pointer font-semibold mr-3'
                 tabIndex={0}
                 onClick={toggleDropdown}
             >
@@ -21,8 +22,8 @@ const NavItemWithDropdown = ({ label, links }) => {
                 <MdKeyboardArrowDown className={`text-lg ${isOpen ? 'transform rotate-180' : ''}`} />
             </label>
             {isOpen && (
-                <ul tabIndex={0} className="menu dropdown-content z-[1] shadow bg-base-100 w-56 mt-6">
-                    {links.map((link) => (
+                <ul tabIndex={0} className="menu dropdown-content z-[2] shadow bg-base-100 w-56 mt-6">
+                    {links.map(link => (
                         <li key={link.to}>
                             <Link to={link.to} className={navItem}>
                                 {link.label}
@@ -46,7 +47,7 @@ const NavBar = () => {
                 { to: "/about-us/our-team", label: "Our Team" },
             ]}
         />,
-        <Link key="services" to="/our-services" className={navItem}>Our Services</Link>,
+        <ActiveLink key="services" to="/our-services" className={navItem}>Our Services</ActiveLink>,
         <NavItemWithDropdown
             key="projects"
             label="Projects"
@@ -58,9 +59,9 @@ const NavBar = () => {
                 { to: "/projects/others", label: "Others" }
             ]}
         />,
-        <Link key="events" to="/events" className={navItem}>Events</Link>,
-        <Link key="career" to="/career" className={navItem}>Career</Link>,
-        <Link key="contact" to="/contact-us" className={navItem}>Contact Us</Link>
+        <ActiveLink key="events" to="/events" className={navItem}>Events</ActiveLink>,
+        <ActiveLink key="career" to="/career" className={navItem}>Career</ActiveLink>,
+        <ActiveLink key="contact" to="/contact-us" className={navItem}>Contact Us</ActiveLink>
     ];
 
     return (
@@ -70,7 +71,7 @@ const NavBar = () => {
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <AiOutlineMenu className='text-xl' />
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-4 shadow bg-base-200 w-52 space-y-1">
                         {navOptions}
                     </ul>
                 </div>
