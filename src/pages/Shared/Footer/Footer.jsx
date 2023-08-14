@@ -5,7 +5,7 @@ const Footer = () => {
     const year = format(new Date(), 'yyyy');
     return (
         <>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10 bg-base-200 text-base-content mt-16">
                 <div>
                     <img className='w-24 border border-slate-200' src={logo} alt="Logo" />
                     <p>SWAPNO Designer and Consultant<br />Providing reliable tech since 2020</p>
