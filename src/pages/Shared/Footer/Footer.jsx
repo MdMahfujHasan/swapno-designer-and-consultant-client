@@ -7,7 +7,7 @@ const Footer = () => {
         <>
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
-                    <img className='w-24' src={logo} alt="Logo" />
+                    <img className='w-24 border border-slate-200' src={logo} alt="Logo" />
                     <p>SWAPNO Designer and Consultant<br />Providing reliable tech since 2020</p>
                 </div>
                 <div>
