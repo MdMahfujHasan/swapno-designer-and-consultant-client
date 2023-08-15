@@ -12,6 +12,8 @@ import Others from '../pages/Projects/Others/Others';
 import Events from '../pages/Events/Events';
 import Career from '../pages/Career/Career';
 import ContactUs from '../pages/ContactUs/ContactUs';
+import ServiceDetails from "../pages/OurServices/ServiceDetails";
+import GarmentDetails from "../pages/Projects/GarmentsSector/GarmentDetails";
 
 export const router = createBrowserRouter([
     {
@@ -35,8 +37,18 @@ export const router = createBrowserRouter([
                 element: <OurServices></OurServices>
             },
             {
+                path: "our-services/:id",
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/our-services/${params.id}`)
+            },
+            {
                 path: "projects/garments-sector",
                 element: <GarmentsSector></GarmentsSector>
+            },
+            {
+                path: "projects/garments-sector/:id",
+                element: <GarmentDetails></GarmentDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/garments-sector/${params.id}`)
             },
             {
                 path: "projects/telecom-sector",
