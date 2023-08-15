@@ -1,8 +1,11 @@
+import SectionTitle from "../../../components/SectionTitle";
+
 const RhdBangladesh = () => {
     return (
-        <div>
-            RhdBangladesh
-        </div>
+        <>
+            <SectionTitle>RHD Bangladesh</SectionTitle>
+            <div className="text-xl text-center text-yellow-400">Coming soon...</div>
+        </>
     );
 };
 

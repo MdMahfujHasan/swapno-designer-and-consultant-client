@@ -14,6 +14,7 @@ import Career from '../pages/Career/Career';
 import ContactUs from '../pages/ContactUs/ContactUs';
 import ServiceDetails from "../pages/OurServices/ServiceDetails";
 import GarmentDetails from "../pages/Projects/GarmentsSector/GarmentDetails";
+import EventDetails from "../pages/Events/EventDetails";
 
 export const router = createBrowserRouter([
     {
@@ -69,6 +70,11 @@ export const router = createBrowserRouter([
             {
                 path: "events",
                 element: <Events></Events>
+            },
+            {
+                path: "events/:id",
+                element: <EventDetails></EventDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/events/${params.id}`)
             },
             {
                 path: "career",

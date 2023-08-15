@@ -1,0 +1,22 @@
+.hovered {
+    transition: transform 3s;
+    cursor: crosshair;
+}
+
+.hovered:hover {
+    animation: zoom-in-out 6s infinite alternate;
+}
+
+@keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
