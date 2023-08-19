@@ -2,13 +2,15 @@ import { FiSettings } from 'react-icons/fi';
 import { BsCupHot, BsFillBriefcaseFill } from 'react-icons/bs';
 import ListItem from '../../../components/ListItem';
 import BtnReadMore from '../../../components/BtnReadMore';
+import useTheme from '../../../hooks/useTheme';
 
 const Featured = () => {
-    const featuredIcon = "text-2xl mt-1 mr-4 bg-sky-400 hover:bg-sky-500 w-10 h-10 p-2 text-white";
-    const title = "text-2xl uppercase font-semibold text-slate-700";
-    const description = "text-slate-500 text-justify w-full lg:w-80";
+    const { dark } = useTheme();
+    const featuredIcon = `text-2xl mt-1 mr-4 w-10 h-10 p-2 text-white ${dark ? "bg-indigo-800 hover:bg-indigo-900" : "bg-sky-400 hover:bg-sky-500"}`;
+    const title = `text-2xl uppercase font-semibold text-slate-700 ${dark && "text-slate-200"}`;
+    const description = `text-justify w-full lg:w-80 ${dark ? "text-slate-400" : "text-slate-500"}`;
     return (
-        <section className='flex flex-col justify-around lg:flex-row p-4 gap-4 max-w-screen-2xl mx-auto'>
+        <section className={`flex flex-col justify-around lg:flex-row p-4 gap-4 max-w-screen-2xl mx-auto ${dark && "bg-indigo-950"}`}>
             <div className='flex'>
                 <FiSettings className={featuredIcon} />
                 <div className='space-y-2'>

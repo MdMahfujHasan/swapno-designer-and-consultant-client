@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { FaPhone } from 'react-icons/fa';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { AiFillMail, AiFillFacebook, AiFillTwitterSquare, AiFillLinkedin, AiFillYoutube } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import SocialLinks from '../../../components/SocialLinks';
+import useTheme from '../../../hooks/useTheme';
 
 const ContactInfo = () => {
     const [isVisible, setIsVisible] = useState(true);
-
+    const { dark, setDark } = useTheme();
     const handleClose = () => {
         setIsVisible(false);
     };
@@ -14,7 +16,7 @@ const ContactInfo = () => {
     return (
         <>
             {isVisible && (
-                <div className="bg-slate-700 p-2 text-white flex justify-between items-center">
+                <div className={`p-2 text-white flex justify-between items-center ${dark ? "bg-slate-700" : "bg-slate-600"}`}>
                     <div></div>
                     <div className="flex items-center">
                         <div title="+8801716861356" className="flex items-center mr-2">
@@ -26,7 +28,7 @@ const ContactInfo = () => {
                         <div title="mhhimel.buet04@gmail.com" className="flex items-center">
                             <AiFillMail className="text-xs mr-1" />
                             <Link to="mailto:mhhimel.buet04@gmail.com" className="hover:underline text-sm">
-                                Email us
+                                Email Us
                             </Link>
                         </div>
                         <div className='flex items-center ml-8 space-x-1'>
@@ -44,12 +46,17 @@ const ContactInfo = () => {
                             </SocialLinks>
                         </div>
                     </div>
-                    <button
-                        onClick={handleClose}
-                        className="text-xs bg-slate-500 px-2 py-1 rounded-full"
-                    >
-                        X
-                    </button>
+                    <div className='flex items-center'>
+                        <button onClick={() => setDark(!dark)} className='mr-4'>
+                            {dark ? <FiSun /> : <FiMoon />}
+                        </button>
+                        <button
+                            onClick={handleClose}
+                            className="text-xs bg-slate-500 px-2 py-1 rounded-full"
+                        >
+                            X
+                        </button>
+                    </div>
                 </div >
             )}
         </>

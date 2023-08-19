@@ -1,6 +1,5 @@
 [
     {
-        "_id": "a1b2c3d4",
         "img": "https://placehold.co/400",
         "name": "John Doe",
         "mobile": "+8801712345678",
@@ -9,7 +8,6 @@
         "education": "B.Sc. in Computer Science, BUET"
     },
     {
-        "_id": "e5f6g7h8",
         "img": "https://placehold.co/400",
         "name": "Jane Smith",
         "mobile": "+8801812345678",
@@ -17,7 +15,6 @@
         "education": "M.Sc. in Statistics, Dhaka University"
     },
     {
-        "_id": "i9j0k1l2",
         "img": "https://placehold.co/400",
         "name": "Michael Johnson",
         "mobile": "+8801912345678",
@@ -26,7 +23,6 @@
         "education": "MBA in Marketing, North South University"
     },
     {
-        "_id": "m3n4o5p6",
         "img": "https://placehold.co/400",
         "name": "Emily Williams",
         "mobile": "+8801512345678",
@@ -34,7 +30,6 @@
         "education": "BFA in Graphic Design, University of Dhaka"
     },
     {
-        "_id": "q7r8s9t0",
         "img": "https://placehold.co/400",
         "name": "Daniel Brown",
         "mobile": "+8801212345678",
@@ -42,7 +37,6 @@
         "education": "BBA in Finance, Independent University, Bangladesh"
     },
     {
-        "_id": "u1v2w3x4",
         "img": "https://placehold.co/400",
         "name": "Sophia Lee",
         "mobile": "+8801312345678",
@@ -50,7 +44,6 @@
         "education": "MHRM in Human Resource Management, Jahangirnagar University"
     },
     {
-        "_id": "y5z6a7b8",
         "img": "https://placehold.co/400",
         "name": "David Garcia",
         "mobile": "+8801412345678",
@@ -58,7 +51,6 @@
         "education": "B.Com. in Marketing, East West University"
     },
     {
-        "_id": "c9d0e1f2",
         "img": "https://placehold.co/400",
         "name": "Ava Robinson",
         "mobile": "+8801612345678",
@@ -67,7 +59,6 @@
         "education": "M.Sc. in Operations Research, Rajshahi University"
     },
     {
-        "_id": "g3h4i5j6",
         "img": "https://placehold.co/400",
         "name": "Matthew Taylor",
         "mobile": "+8801912345678",
@@ -76,7 +67,6 @@
         "education": "B.Sc. in Computer Science, Khulna University"
     },
     {
-        "_id": "k7l8m9n0",
         "img": "https://placehold.co/400",
         "name": "Emma Martinez",
         "mobile": "+8801312345678",
@@ -84,7 +74,6 @@
         "education": "M.Sc. in Economics, Chittagong University"
     },
     {
-        "_id": "o1p2q3r4",
         "img": "https://placehold.co/400",
         "name": "Andrew Scott",
         "mobile": "+8801512345678",
@@ -93,7 +82,6 @@
         "education": "MBA in Marketing, BRAC University"
     },
     {
-        "_id": "s5t6u7v8",
         "img": "https://placehold.co/400",
         "name": "Isabella White",
         "mobile": "+8801812345678",
@@ -101,7 +89,6 @@
         "education": "BFA in Multimedia Arts, Daffodil International University"
     },
     {
-        "_id": "w9x0y1z2",
         "img": "https://placehold.co/400",
         "name": "James Lee",
         "mobile": "+8801712345678",
@@ -109,7 +96,6 @@
         "education": "BBA in Finance, American International University-Bangladesh"
     },
     {
-        "_id": "a3b4c5d6",
         "img": "https://placehold.co/400",
         "name": "Mia Johnson",
         "mobile": "+8801212345678",
@@ -118,7 +104,6 @@
         "education": "MBA in Project Management, Jagannath University"
     },
     {
-        "_id": "e7f8g9h0",
         "img": "https://placehold.co/400",
         "name": "William Brown",
         "mobile": "+8801612345678",
@@ -126,7 +111,6 @@
         "education": "B.Sc. in Computer Science, North South University"
     },
     {
-        "_id": "i1j2k3l4",
         "img": "https://placehold.co/400",
         "name": "Sophie Davis",
         "mobile": "+8801412345678",
@@ -134,7 +118,6 @@
         "education": "MHRM in Human Resource Management, University of Chittagong"
     },
     {
-        "_id": "m5n6o7p8",
         "img": "https://placehold.co/400",
         "name": "Alexander Martinez",
         "mobile": "+8801912345678",
@@ -142,7 +125,6 @@
         "education": "BFA in Graphic Design, Khulna University of Engineering & Technology"
     },
     {
-        "_id": "q9r0s1t2",
         "img": "https://placehold.co/400",
         "name": "Grace Wilson",
         "mobile": "+8801312345678",
@@ -150,7 +132,6 @@
         "education": "MBA in Marketing, University of Rajshahi"
     },
     {
-        "_id": "u3v4w5x6",
         "img": "https://placehold.co/400",
         "name": "Benjamin Miller",
         "mobile": "+8801512345678",
@@ -158,7 +139,6 @@
         "education": "BBA in Finance, East West University"
     },
     {
-        "_id": "y7z8a9b0",
         "img": "https://placehold.co/400",
         "name": "Lily Martin",
         "mobile": "+8801812345678",

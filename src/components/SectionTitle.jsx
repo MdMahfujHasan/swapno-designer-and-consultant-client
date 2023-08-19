@@ -1,7 +1,10 @@
+import useTheme from "../hooks/useTheme";
+
 const SectionTitle = ({ children }) => {
+    const { dark } = useTheme();
     return (
-        <div className="text-center mt-16 mb-8">
-            <span className="font-semibold text-slate-700 text-3xl border-l-8 border-l-indigo-300 mx-auto pl-2 uppercase">{children}</span>
+        <div className={`py-4 text-center mt-16 mb-8 ${dark && "bg-violet-950"}`}>
+            <span className={`font-semibold text-3xl border-l-8 mx-auto pl-2 uppercase ${dark ? "text-slate-300 border-l-indigo-600" : "text-slate-700 border-l-indigo-300"}`}>{children}</span>
         </div>
     );
 };

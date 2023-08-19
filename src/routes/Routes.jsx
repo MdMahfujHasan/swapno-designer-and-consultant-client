@@ -15,75 +15,86 @@ import ContactUs from '../pages/ContactUs/ContactUs';
 import ServiceDetails from "../pages/OurServices/ServiceDetails";
 import GarmentDetails from "../pages/Projects/GarmentsSector/GarmentDetails";
 import EventDetails from "../pages/Events/EventDetails";
+import NotFound from "../pages/Shared/NotFound/NotFound";
+import Login from "../pages/Login/Login/Login";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Main></Main>,
+        element: <Main />,
         children: [
             {
                 path: "/",
-                element: <Home></Home>
+                element: <Home />
             },
             {
                 path: "about-us/board-of-directors",
-                element: <BoardOfDirectors></BoardOfDirectors>
+                element: <PrivateRoute><BoardOfDirectors /></PrivateRoute>
             },
             {
                 path: "about-us/our-team",
-                element: <OurTeam></OurTeam>
+                element: <PrivateRoute><OurTeam /></PrivateRoute>
             },
             {
                 path: "our-services",
-                element: <OurServices></OurServices>
+                element: <OurServices />
             },
             {
                 path: "our-services/:id",
-                element: <ServiceDetails></ServiceDetails>,
+                element: <ServiceDetails />,
                 loader: ({ params }) => fetch(`http://localhost:5000/our-services/${params.id}`)
             },
             {
                 path: "projects/garments-sector",
-                element: <GarmentsSector></GarmentsSector>
+                element: <GarmentsSector />
             },
             {
                 path: "projects/garments-sector/:id",
-                element: <GarmentDetails></GarmentDetails>,
+                element: <GarmentDetails />,
                 loader: ({ params }) => fetch(`http://localhost:5000/garments-sector/${params.id}`)
             },
             {
                 path: "projects/telecom-sector",
-                element: <TelecomSector></TelecomSector>
+                element: <TelecomSector />
             },
             {
                 path: "projects/rhd-bangladesh",
-                element: <RhdBangladesh></RhdBangladesh>
+                element: <RhdBangladesh />
             },
             {
                 path: "projects/bangladesh-railway",
-                element: <BangladeshRailway></BangladeshRailway>
+                element: <BangladeshRailway />
             },
             {
                 path: "projects/others",
-                element: <Others></Others>
+                element: <Others />
             },
             {
                 path: "events",
-                element: <Events></Events>
+                element: <Events />
             },
             {
                 path: "events/:id",
-                element: <EventDetails></EventDetails>,
+                element: <EventDetails />,
                 loader: ({ params }) => fetch(`http://localhost:5000/events/${params.id}`)
             },
             {
                 path: "career",
-                element: <Career></Career>
+                element: <Career />
             },
             {
                 path: "contact-us",
-                element: <ContactUs></ContactUs>
-            }
+                element: <ContactUs />
+            },
+            {
+                path: "login",
+                element: <Login />
+            },
         ]
     },
+    {
+        path: "*",
+        element: <NotFound />
+    }
 ]);

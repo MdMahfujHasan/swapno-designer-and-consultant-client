@@ -1,11 +1,13 @@
 import logo from '../../../assets/logo.jpg';
 import { format } from 'date-fns';
+import useTheme from '../../../hooks/useTheme';
 
 const Footer = () => {
     const year = format(new Date(), 'yyyy');
+    const { dark } = useTheme();
     return (
         <>
-            <footer className="footer p-10 bg-base-200 text-base-content mt-16">
+            <footer className={`footer p-12 text-base-content ${dark ? "bg-indigo-950 text-primary-content" : "bg-base-200"}`}>
                 <div>
                     <img className='w-24 border border-slate-200' src={logo} alt="Logo" />
                     <p>SWAPNO Designer and Consultant<br />Providing reliable tech since 2020</p>
@@ -31,7 +33,9 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
-            <p className='footer footer-center bg-base-200 pb-1'>Copyright © {year} - All right reserved by SWAPNO Designer and Consultant</p>
+            <p className={`footer footer-center pb-1 ${dark ? "bg-indigo-950 text-primary-content" : "bg-base-200"}`}>
+                <small>Copyright © {year} - All right reserved by SWAPNO Designer and Consultant</small>
+            </p>
         </>
     );
 };

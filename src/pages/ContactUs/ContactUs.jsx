@@ -84,14 +84,14 @@ const ContactUs = () => {
                         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
                     </div>
 
-                    <button type="submit" className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Submit</button>
+                    <button type="submit" className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Send Message</button>
                 </form>
                 <div className='w-full md:w-1/2 space-y-5 bg-slate-50 p-6'>
                     <div className='flex'>
                         <FiMapPin className={featuredIcon} />
                         <div>
                             <h4 className={title}>Address</h4>
-                            <p className={details}>Swapno Designer and Consultant 123 Dream Street, Dhaka, Bangladesh.</p>
+                            <p className={details}>Swapno Designer and Consultant, 123 Dream Street, Dhaka, Bangladesh.</p>
                         </div>
                     </div>
                     <div className='flex'>
