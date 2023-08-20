@@ -4,7 +4,6 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import ActiveLink from '../../../components/ActiveLink';
 import useTheme from '../../../hooks/useTheme';
-import useAuth from '../../../hooks/useAuth';
 import ProfileToggle from '../../../components/ProfileToggle';
 
 const navItem = "mr-5 font-semibold uppercase";
@@ -41,8 +40,6 @@ const NavItemWithDropdown = ({ label, links }) => {
 
 const NavBar = () => {
     const { dark } = useTheme();
-    const { user } = useAuth();
-    console.log(user);
     const navOptions = [
         <Link key="home" to="/" className={navItem}>Home</Link>,
         <NavItemWithDropdown

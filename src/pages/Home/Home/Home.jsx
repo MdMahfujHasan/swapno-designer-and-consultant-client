@@ -9,11 +9,11 @@ const Home = () => {
     const { dark } = useTheme();
     return (
         <div className={`${dark ? "bg-indigo-950" : "bg-slate-50"}`}>
-            <Banner></Banner>
-            <Featured></Featured>
-            <AboutUs></AboutUs>
-            <WhyChooseUs></WhyChooseUs>
-            <OurClients></OurClients>
+            <Banner />
+            <Featured />
+            <AboutUs />
+            <WhyChooseUs />
+            <OurClients />
         </div>
     );
 };

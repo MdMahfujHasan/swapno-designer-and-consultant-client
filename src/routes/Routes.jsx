@@ -18,6 +18,7 @@ import EventDetails from "../pages/Events/EventDetails";
 import NotFound from "../pages/Shared/NotFound/NotFound";
 import Login from "../pages/Login/Login/Login";
 import PrivateRoute from "./PrivateRoute";
+import Profile from "../pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
             {
                 path: "contact-us",
                 element: <ContactUs />
+            },
+            {
+                path: "profile",
+                element: <Profile />
             },
             {
                 path: "login",

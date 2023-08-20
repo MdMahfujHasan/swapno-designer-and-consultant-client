@@ -6,7 +6,7 @@ import { BsInfoSquare } from 'react-icons/bs';
 
 const EmployeeCard = ({ employee }) => {
     const { dark } = useTheme();
-    const { _id, img, name, designation, mobile, education } = employee;
+    const { _id, img, name, designation, role, mobile, education } = employee;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { register, handleSubmit, setValue } = useForm();
@@ -16,6 +16,7 @@ const EmployeeCard = ({ employee }) => {
         setValue("img", img);
         setValue("name", name);
         setValue("designation", designation);
+        setValue("role", role);
         setValue("education", education);
         setValue("mobile", mobile);
         setValue("id", id);
@@ -89,31 +90,42 @@ const EmployeeCard = ({ employee }) => {
                             <input
                                 type="text"
                                 {...register("img")}
+                                placeholder="Photo URL"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             <input
                                 type="text"
                                 {...register("name")}
+                                placeholder="Name"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             <input
                                 type="text"
                                 {...register("designation")}
+                                placeholder="Designation"
+                                className="input input-bordered w-full focus:outline-0 input-sm mb-3"
+                            />
+                            <input
+                                type="text"
+                                {...register("role")}
+                                placeholder="Role"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             <input
                                 type="text"
                                 {...register("education")}
+                                placeholder="Education"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             <input
                                 type="text"
                                 {...register("mobile")}
+                                placeholder="Mobile"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             <div className="flex justify-end">
                                 <button type="submit" className="btn btn-xs btn-success text-white mr-1">Save</button>
-                                <button type="button" onClick={closeModal} className="btn btn-xs bg-slate-500 hover:bg-slate-500 text-white">Cancel</button>
+                                <button type="button" onClick={closeModal} className="btn btn-xs bg-slate-400 hover:bg-slate-400 text-white">Cancel</button>
                             </div>
                         </form>
                     </div>

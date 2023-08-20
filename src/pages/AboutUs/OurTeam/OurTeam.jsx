@@ -62,14 +62,14 @@ const OurTeam = () => {
                     <EmployeeCard key={employee._id} employee={employee} />
                 ))}
                 <div className="flex justify-center items-center">
-                    <AiOutlinePlusSquare onClick={openNewEmployeeModal} className="text-8xl text-emerald-300 hover:cursor-pointer" />
+                    <AiOutlinePlusSquare onClick={openNewEmployeeModal} className="text-8xl text-emerald-300 hover:text-green-300 hover:cursor-pointer" />
                 </div>
             </div>
 
             {isNewEmployeeModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="bg-white p-6 rounded-lg w-96">
-                        <h3 className="font-semibold mb-4 text-primary flex items-center">
+                        <h3 className="font-semibold mb-4 text-accent flex items-center">
                             <BsFileEarmarkText className="mr-1" /> Add New Employee
                         </h3>
                         <form onSubmit={handleSubmit(onSubmitNewEmployee)}>
@@ -79,7 +79,7 @@ const OurTeam = () => {
                                     required: true,
                                     pattern: /^https:\/\//
                                 })}
-                                placeholder="Image URL"
+                                placeholder="Photo URL"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             {errors.newImg && <p className="text-error text-xs">Please provide a valid image URL starting with https://</p>}
@@ -132,13 +132,12 @@ const OurTeam = () => {
                                 type="text"
                                 {...register("newMobile", {
                                     required: true,
-                                    pattern: /^\d{11,14}$/
+                                    pattern: /^[+]?\d{11,14}$/
                                 })}
                                 placeholder="Mobile"
                                 className="input input-bordered w-full focus:outline-0 input-sm mb-3"
                             />
                             {errors.newMobile && <p className="text-error text-xs">Mobile number is required and should be between 11 and 14 digits</p>}
-
 
                             <div className="flex justify-end">
                                 <button type="submit" className="btn btn-xs btn-success text-white mr-1">
@@ -147,7 +146,7 @@ const OurTeam = () => {
                                 <button
                                     type="button"
                                     onClick={closeNewEmployeeModal}
-                                    className="btn btn-xs bg-slate-500 hover:bg-slate-500 text-white"
+                                    className="btn btn-xs bg-slate-400 hover:bg-slate-400 text-white"
                                 >
                                     Cancel
                                 </button>
