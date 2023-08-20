@@ -33,7 +33,7 @@ const OurTeam = () => {
             confirmButtonText: 'Add'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch('http://localhost:5000/employees', {
+                fetch('https://swapno-designer-and-consultant-server.vercel.app/employees', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -141,7 +141,7 @@ const OurTeam = () => {
 
                             <div className="flex justify-end">
                                 <button type="submit" className="btn btn-xs btn-success text-white mr-1">
-                                    Save
+                                    Add
                                 </button>
                                 <button
                                     type="button"

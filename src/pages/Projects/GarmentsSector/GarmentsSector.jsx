@@ -5,7 +5,7 @@ import GarmentCard from "./GarmentCard";
 const GarmentsSector = () => {
     const [garments, setGarments] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/garments-sector')
+        fetch('https://swapno-designer-and-consultant-server.vercel.app/garments-sector')
             .then(res => res.json())
             .then(data => setGarments(data))
     }, [])

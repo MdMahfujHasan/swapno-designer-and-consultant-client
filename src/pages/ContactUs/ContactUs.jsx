@@ -8,7 +8,7 @@ import { MdOutlineEmail } from 'react-icons/md';
 const ContactUs = () => {
     const { handleSubmit, control, reset, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        fetch('http://localhost:5000/messages', {
+        fetch('https://swapno-designer-and-consultant-server.vercel.app/messages', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -20,7 +20,7 @@ const ContactUs = () => {
                 if (data.insertedId) {
                     Swal.fire(
                         'Delivered',
-                        'Your message has been sent.',
+                        'Your message has been sent',
                         'success'
                     )
                     reset();
@@ -64,9 +64,9 @@ const ContactUs = () => {
                             control={control}
                             rules={{
                                 required: 'Mobile is required',
-                                pattern: /^[0-9]*$/,
+                                pattern: /^(\+?[0-9]+)$/,
                                 minLength: 11,
-                                maxLength: 11,
+                                maxLength: 14,
                             }}
                             render={({ field }) => <input {...field} className="mt-1 p-2 border rounded-md w-full" />}
                         />

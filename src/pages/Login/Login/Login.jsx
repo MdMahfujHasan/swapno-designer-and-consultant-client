@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
 const SignUpModal = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
@@ -13,12 +14,12 @@ const SignUpModal = ({ isOpen, onClose }) => {
         console.log(data);
         createUser(data.signUpEmail, data.signUpPassword)
             .then(result => {
-                console.log(result)
+                console.log(result);
                 updateUserProfile(data.signUpName, data.signUpPhoto)
                     .then(() => {
                         const saveUser = { name: data.signUpName, email: data.signUpEmail, photoURL: data.signUpPhoto };
                         console.log(saveUser)
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://swapno-designer-and-consultant-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -47,7 +48,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                     'error'
                 )
             })
-        // onClose();
+        onClose();
     };
 
     return (
@@ -169,7 +170,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
 const Login = () => {
     const { signIn } = useAuth();
     const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
-
+    const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -184,8 +185,7 @@ const Login = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = data => {
         signIn(data.email, data.password)
             .then(() => {
                 Swal.fire(
@@ -193,7 +193,7 @@ const Login = () => {
                     'Login successful',
                     'success'
                 )
-                navigate(from, { replace: true })
+                navigate(from, { replace: true });
             })
             .catch(error => console.log(error))
     };
@@ -224,12 +224,12 @@ const Login = () => {
                         />
                         {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-4 relative">
                         <label htmlFor="password" className="block text-sm font-medium text-slate-700">
                             Password
                         </label>
                         <input
-                            type="password"
+                            type={show ? "text" : "password"}
                             id="password"
                             placeholder="Your Password"
                             className={`mt-1 px-3 py-2 block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'
@@ -242,6 +242,7 @@ const Login = () => {
                                 },
                             })}
                         />
+                        <small onClick={() => setShow(!show)} className="absolute right-2 top-9 hover:cursor-pointer">{show ? <AiOutlineEye className='text-xl' /> : <AiOutlineEyeInvisible className='text-xl' />}</small>
                         {errors.password && <p className="mt-1 text-xs text-red-500">{errors.password.message}</p>}
                     </div>
                     <button

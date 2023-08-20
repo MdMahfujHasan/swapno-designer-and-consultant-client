@@ -29,7 +29,7 @@ const EmployeeCard = ({ employee }) => {
     const onSubmit = data => {
         const id = data.id;
         console.log(id, data);
-        fetch(`http://localhost:5000/employees/${id}`, {
+        fetch(`https://swapno-designer-and-consultant-server.vercel.app/employees/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +50,7 @@ const EmployeeCard = ({ employee }) => {
             confirmButtonText: 'Delete'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/employees/${id}`, {
+                fetch(`https://swapno-designer-and-consultant-server.vercel.app/employees/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

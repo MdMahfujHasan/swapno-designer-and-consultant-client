@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             {
                 path: "our-services/:id",
                 element: <ServiceDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/our-services/${params.id}`)
+                loader: ({ params }) => fetch(`https://swapno-designer-and-consultant-server.vercel.app/our-services/${params.id}`)
             },
             {
                 path: "projects/garments-sector",
@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
             {
                 path: "projects/garments-sector/:id",
                 element: <GarmentDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/garments-sector/${params.id}`)
+                loader: ({ params }) => fetch(`https://swapno-designer-and-consultant-server.vercel.app/garments-sector/${params.id}`)
             },
             {
                 path: "projects/telecom-sector",
@@ -78,7 +78,7 @@ export const router = createBrowserRouter([
             {
                 path: "events/:id",
                 element: <EventDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/events/${params.id}`)
+                loader: ({ params }) => fetch(`https://swapno-designer-and-consultant-server.vercel.app/events/${params.id}`)
             },
             {
                 path: "career",
