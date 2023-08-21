@@ -32,7 +32,7 @@ const MessageCard = ({ singleMessage }) => {
                 <p><small><b>Mobile:</b> <span className="text-slate-700 font-semibold">{mobile}</span></small></p>
                 <p><small><b>Message:</b> <span className="text-slate-700 font-semibold">{message}</span></small></p>
                 <div>
-                    <button onClick={() => handleDelete(_id)} className="bg-red-400 hover:bg-red-500 px-2 rounded text-white">Delete</button>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-error text-white">Delete</button>
                 </div>
             </div>
         </div>

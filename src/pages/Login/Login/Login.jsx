@@ -4,6 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import ForgotPassword from './ForgotPassword';
 
 const SignUpModal = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
@@ -195,7 +196,23 @@ const Login = () => {
                 )
                 navigate(from, { replace: true });
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                Swal.fire(
+                    'Error',
+                    `${error.message}`,
+                    'error'
+                )
+            })
+    };
+
+    const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
+
+    const openForgotPasswordModal = () => {
+        setIsForgotPasswordModalOpen(true);
+    };
+
+    const closeForgotPasswordModal = () => {
+        setIsForgotPasswordModalOpen(false);
     };
 
     return (
@@ -235,11 +252,7 @@ const Login = () => {
                             className={`mt-1 px-3 py-2 block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'
                                 } focus:ring-blue-500 focus:border-blue-500`}
                             {...register('password', {
-                                required: 'Password is required',
-                                minLength: {
-                                    value: 6,
-                                    message: 'Password must be at least 6 characters long',
-                                },
+                                required: 'Password is required'
                             })}
                         />
                         <small onClick={() => setShow(!show)} className="absolute right-2 top-9 hover:cursor-pointer">{show ? <AiOutlineEye className='text-xl' /> : <AiOutlineEyeInvisible className='text-xl' />}</small>
@@ -251,7 +264,13 @@ const Login = () => {
                     >
                         Login
                     </button>
+                    <button
+                        type="button"
+                        className="text-sm text-blue-500 flex justify-center mt-2 hover:underline hover:cursor-pointer"
+                        onClick={openForgotPasswordModal}
+                    >Forgotten Password?</button>
                 </form>
+                <ForgotPassword isOpen={isForgotPasswordModalOpen} onClose={closeForgotPasswordModal} />
                 <button
                     type="button"
                     onClick={openSignUpModal}
